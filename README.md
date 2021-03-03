@@ -5,6 +5,7 @@
 </p>
 <h3 align="center">API creation made simple, secure and fast.</h3>
 <p align="center">The most advanced open-source headless CMS to build powerful APIs with no effort.</p>
+<p align="center"><a href="https://strapi.io/demo">Try live demo</a></p>
 <br />
 
 <p align="center">
@@ -20,10 +21,6 @@
     <img src="https://assets.strapi.io/uploads/Deploy_button_heroku_b1043fc67d.png" />
   </a>
 
-  <a href="https://fastandcomfy.io/strapi/">
-    <img src="https://assets.strapi.io/uploads/deploy_button_fastandcomfy_7cb9319189.png" />
-  </a>
-  
   <a href="https://render.com/docs/deploy-strapi">
     <img src="https://assets.strapi.io/uploads/deploy_render_e076b6f23a.png" height="44" />
   </a>
@@ -39,7 +36,7 @@
   <a href="https://travis-ci.org/strapi/strapi">
     <img src="https://travis-ci.org/strapi/strapi.svg?branch=master" alt="Travis Build Status" />
   </a>
-  <a href="http://slack.strapi.io">
+  <a href="https://slack.strapi.io">
     <img src="https://slack.strapi.io/badge.svg" alt="Strapi on Slack" />
   </a>
 </p>
@@ -136,7 +133,7 @@ Please read our [Contributing Guide](./CONTRIBUTING.md) before submitting a Pull
 
 For general help using Strapi, please refer to [the official Strapi documentation](https://strapi.io/documentation/). For additional help, you can use one of these channels to ask a question:
 
-- [Slack](http://slack.strapi.io) (For live discussion with the Community and Strapi team)
+- [Slack](https://slack.strapi.io) (For live discussion with the Community and Strapi team)
 - [GitHub](https://github.com/strapi/strapi) (Bug reports, Contributions)
 - [Community Forum](https://forum.strapi.io) (Questions and Discussions)
 - [Academy](https://academy.strapi.io) (Learn the fundamentals of Strapi)
@@ -159,6 +156,10 @@ See our dedicated [repository](https://github.com/strapi/documentation) for the 
 
 - [Developer docs](https://strapi.io/documentation/developer-docs/latest)
 - [User docs](https://strapi.io/documentation/user-docs/latest)
+
+## Try live demo
+
+See for yourself what's under the hood by getting access to a [hosted Strapi project](https://strapi.io/demo) with sample data.
 
 ## License
 

@@ -151,26 +151,32 @@ const count = async (params = {}) => {
 };
 
 /**
- * Delete roles in database if they have no user assigned
- * @param ids query params to find the roles
- * @returns {Promise<array>}
+ * Check if the given roles id can be deleted safely, throw otherwise
+ * @param ids
+ * @returns {Promise<void>}
  */
-const deleteByIds = async (ids = []) => {
+const checkRolesIdForDeletion = async (ids = []) => {
   const superAdminRole = await getSuperAdmin();
+
   if (superAdminRole && stringIncludes(ids, superAdminRole.id)) {
-    throw strapi.errors.badRequest('ValidationError', {
-      ids: ['You cannot delete the super admin role'],
-    });
+    throw new Error('You cannot delete the super admin role');
   }
 
   for (let roleId of ids) {
     const usersCount = await getUsersCount(roleId);
     if (usersCount !== 0) {
-      throw strapi.errors.badRequest('ValidationError', {
-        ids: ['Some roles are still assigned to some users.'],
-      });
+      throw new Error('Some roles are still assigned to some users');
     }
   }
+};
+
+/**
+ * Delete roles in database if they have no user assigned
+ * @param ids query params to find the roles
+ * @returns {Promise<array>}
+ */
+const deleteByIds = async (ids = []) => {
+  await checkRolesIdForDeletion(ids);
 
   await strapi.admin.services.permission.deleteByRolesIds(ids);
 
@@ -184,7 +190,7 @@ const deleteByIds = async (ids = []) => {
 };
 
 /** Count the number of users for some roles
- * @returns {Promise<integer>}
+ * @returns {Promise<number>}
  * @param roleId
  */
 const getUsersCount = async roleId => {
@@ -393,4 +399,5 @@ module.exports = {
   addPermissions,
   assignPermissions,
   resetSuperAdminPermissions,
+  checkRolesIdForDeletion,
 };
